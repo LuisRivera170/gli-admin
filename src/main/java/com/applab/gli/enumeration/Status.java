@@ -2,8 +2,8 @@ package com.applab.gli.enumeration;
 
 public enum Status {
 
-    ACTIVE("ACTIVE"),
-    INACTIVE("INACTIVE");
+    INACTIVE("INACTIVE"),
+    ACTIVE("ACTIVE");
 
     private final String status;
 

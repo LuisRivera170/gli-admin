@@ -1,6 +1,8 @@
 package com.applab.gli.domain;
 
-import com.applab.gli.enumeration.Status;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "areas")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Area {
 
     @Id
@@ -19,6 +24,11 @@ public class Area {
 
     private String description;
 
-    private Status status;
+    public Area(Long id) {
+        this.id = id;
+    }
 
+    public Area(String description) {
+        this.description = description;
+    }
 }

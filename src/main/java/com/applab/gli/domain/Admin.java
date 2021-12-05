@@ -1,6 +1,7 @@
 package com.applab.gli.domain;
 
 import com.applab.gli.enumeration.Status;
+import com.applab.gli.utils.Utils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,13 +28,14 @@ public class Admin {
     private String name;
 
     @Column
-    private String lastname;
+    private String lastName;
 
     @Column(unique = true, nullable = false)
     private String email;
 
     // TODO: Photo
 
+    @Column(nullable = false)
     private Status status;
 
     @ManyToOne
@@ -51,5 +53,21 @@ public class Admin {
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
+
+    @Transient
+    private String fullName;
+
+    public String getFullName() {
+        return this.name.concat(!Utils.isNullOrBlank(this.lastName) ? " ".concat(this.lastName) : "");
+    }
+
+    public Admin(String name, String lastName, String email, Status status, Area area, LocalDateTime createdAt) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.status = status;
+        this.area = area;
+        this.createdAt = createdAt;
+    }
 
 }
