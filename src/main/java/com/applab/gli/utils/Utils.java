@@ -31,6 +31,13 @@ public class Utils {
             .build();
     }
 
+    public static ResponseDTO buildErrorResponseDTO(String developerMessage) {
+        return ResponseDTO.builder()
+            .timeStamp(now())
+            .developerMessage(developerMessage)
+            .build();
+    }
+
     /** JWT **/
 
     public static Algorithm algorithm;

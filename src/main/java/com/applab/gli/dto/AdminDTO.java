@@ -20,6 +20,7 @@ public class AdminDTO {
     private String adminLastName;
     private String adminFullName;
     private String adminEmail;
+    private byte[] adminPhoto;
     private String adminStatus;
     private AreaDTO adminArea;
     private LocalDateTime adminCreatedAt;

@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 import java.time.LocalDateTime;
@@ -33,7 +35,10 @@ public class Admin {
     @Column(unique = true, nullable = false)
     private String email;
 
-    // TODO: Photo
+    @Lob
+    @Column(name = "photo")
+    @Type(type = "org.hibernate.type.BinaryType")
+    private byte[] photo;
 
     @Column(nullable = false)
     private Status status;

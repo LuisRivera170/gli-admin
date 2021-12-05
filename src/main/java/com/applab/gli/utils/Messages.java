@@ -11,7 +11,7 @@ public class Messages {
     public static final String ADMIN_WITH_ID_CREATED = "Admin created, id -> %d";
     public static final String ADMIN_WITH_ID_UPDATED = "Admin with id %d updated!!!";
     public static final String ADMIN_WITH_ID_DELETED = "Admin with id %d, deleted!!!";
-
+    public static final String ADMIN_WITH_ID_PHOTO_UPLOADED = "Admin with id %d photo uploaded!!!";
 
     /* General errors */
     public static final String MISSING_PARAMETER = "Missing parameter - %s";

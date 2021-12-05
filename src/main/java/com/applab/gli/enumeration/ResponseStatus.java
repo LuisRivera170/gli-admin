@@ -6,7 +6,8 @@ public enum ResponseStatus {
     CREATED("CREATED"),
     UPDATED("UPDATED"),
     DELETED("DELETED"),
-    NOT_FOUND("NOT_FOUND");
+    NOT_FOUND("NOT_FOUND"),
+    UPLOADED("UPLOADED");
 
     private final String status;
 

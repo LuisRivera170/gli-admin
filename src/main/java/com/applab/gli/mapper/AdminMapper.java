@@ -59,6 +59,9 @@ public class AdminMapper {
         if (!isNullOrBlank(admin.getEmail())) {
             newAdminDTO.setAdminEmail(admin.getEmail());
         }
+        if (null != admin.getPhoto()) {
+            newAdminDTO.setAdminPhoto(admin.getPhoto());
+        }
         if (null != admin.getStatus()) {
             newAdminDTO.setAdminStatus(admin.getStatus().getStatus());
         }
