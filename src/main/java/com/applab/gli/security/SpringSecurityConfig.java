@@ -49,7 +49,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         customAuthenticationFilter.setFilterProcessesUrl("/api/login");
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
-        http.authorizeRequests().antMatchers("/api/login", "/login/**").permitAll();
+        http.authorizeRequests().antMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll();
+        http.authorizeRequests().antMatchers("/api/login", "/login/**", "/swagger-ui.html").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST, "/admins/**").hasAuthority("ROLE_SUPER_ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.PUT, "/admins/**").hasAuthority("ROLE_SUPER_ADMIN");
         http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/admins/**").hasAuthority("ROLE_SUPER_ADMIN");
